@@ -52,7 +52,7 @@ export default function Home() {
           {items.map((item, id) => (
             <li key={id} className="p-4 w-full flex justify-between">
               <div className="p-4 w-full flex justify-between  bg-slate-950">
-                <span className="capitalize">{item.name}</span>
+                <span className="uppercase">{item.name}</span>
                 <span>${item.price}</span>
               </div>
               <button
@@ -64,6 +64,14 @@ export default function Home() {
             </li>
           ))}
         </ul>
+        {items.length < 1 ? (
+          ""
+        ) : (
+          <div className="p-4 flex justify-between">
+            <span className="p-4 flex justify-center">Total</span>
+            <span className="p-4 flex justify-center">${total}</span>
+          </div>
+        )}
       </div>
     </main>
   );
